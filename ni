@@ -745,7 +745,7 @@ end
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Blade Ball Hub | By: KingScript",
+   Name = "Blade Ball | 🌿Nature Hub",
    LoadingTitle = "Made By KingScript...",
    LoadingSubtitle = "Loading...",
    ConfigurationSaving = {
@@ -757,7 +757,7 @@ local Window = Rayfield:CreateWindow({
    KeySystem = false
 })
 -- Tabs
-local MainTab = Window:CreateTab("Main", "Home")
+local MainTab = Window:CreateTab("Blatant", "Sword")
 
 local Toggle = MainTab:CreateToggle({
    Name = "Auto Parry",
@@ -934,7 +934,7 @@ local Slider = MainTab:CreateSlider({
    Name = "Parry Accuracy",
    Range = {1, 100},
    Increment = 1,
-   Suffix = "nil",
+   Suffix = "",
    CurrentValue = 100,
    Flag = "Parryaccuracy", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(value)
@@ -1029,88 +1029,12 @@ local Slider = MainTab:CreateSlider({
    Name = "Parry Threshold",
    Range = {1, 3},
    Increment = 0.5,
-   Suffix = "nil",
+   Suffix = "",
    CurrentValue = 1,
    Flag = "ParryThreshold", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(value)
         ParryThreshold = value
 	end
 })
-
-local Toggle = MainTab:CreateToggle({
-   Name = "Manual Spam",
-   CurrentValue = false,
-   Flag = "manualspam", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(value)
-       getgenv().spamui = value
-
-        if value then
-            local gui = Instance.new("ScreenGui")
-            gui.Name = "ManualSpamUI"
-            gui.ResetOnSpawn = false
-            gui.Parent = game.CoreGui
-
-            local frame = Instance.new("Frame")
-            frame.Name = "MainFrame"
-            frame.Position = UDim2.new(0, 20, 0, 20)
-            frame.Size = UDim2.new(0, 200, 0, 100)
-            frame.BackgroundColor3 = Color3.fromRGB(10, 10, 50)
-            frame.BackgroundTransparency = 0.3
-            frame.BorderSizePixel = 0
-            frame.Active = true
-            frame.Draggable = true
-            frame.Parent = gui
-
-            local uiCorner = Instance.new("UICorner")
-            uiCorner.CornerRadius = UDim.new(0, 12)
-            uiCorner.Parent = frame
-
-            local uiStroke = Instance.new("UIStroke")
-            uiStroke.Thickness = 2
-            uiStroke.Color = Color3.new(0, 0, 0)
-            uiStroke.Parent = frame
-
-            local button = Instance.new("TextButton")
-            button.Name = "ClashModeButton"
-            button.Text = "Clash Mode"
-            button.Size = UDim2.new(0, 160, 0, 40)
-            button.Position = UDim2.new(0.5, -80, 0.5, -20)
-            button.BackgroundTransparency = 1
-            button.BorderSizePixel = 0
-            button.Font = Enum.Font.GothamSemibold
-            button.TextColor3 = Color3.new(1, 1, 1)
-            button.TextSize = 22
-            button.Parent = frame
-
-            local activated = false
-
-            local function toggle()
-                activated = not activated
-                button.Text = activated and "Stopped" or "Clash Mode"
-                if activated then
-                    Connections_Manager['Manual Spam UI'] = game:GetService("RunService").Heartbeat:Connect(function()
-                        Auto_Parry.Parry(Selected_Parry_Type)
-                    end)
-                else
-                    if Connections_Manager['Manual Spam UI'] then
-                        Connections_Manager['Manual Spam UI']:Disconnect()
-                        Connections_Manager['Manual Spam UI'] = nil
-                    end
-                end
-            end
-
-            button.MouseButton1Click:Connect(toggle)
-        else
-            if game.CoreGui:FindFirstChild("ManualSpamUI") then
-                game.CoreGui:FindFirstChild("ManualSpamUI"):Destroy()
-            end
-
-            if Connections_Manager['Manual Spam UI'] then
-                Connections_Manager['Manual Spam UI']:Disconnect()
-                Connections_Manager['Manual Spam UI'] = nil
-            end
-        end
-    end
-    })
 
 Rayfield:LoadConfiguration()
