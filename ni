@@ -1086,7 +1086,7 @@ local Toggle = MainTab:CreateToggle({
 
             local function toggle()
                 activated = not activated
-                button.Text = activated and "Stop" or "Clash Mode"
+                button.Text = activated and "Stopped" or "Clash Mode"
                 if activated then
                     Connections_Manager['Manual Spam UI'] = game:GetService("RunService").Heartbeat:Connect(function()
                         Auto_Parry.Parry(Selected_Parry_Type)
@@ -1112,6 +1112,5 @@ local Toggle = MainTab:CreateToggle({
         end
     end
     })
-end
 
 Rayfield:LoadConfiguration()
