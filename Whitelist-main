@@ -1,0 +1,33 @@
+local Whitelist = {
+    ["f005c8ec0d5844a27184767f8"] = true,
+    ["eafb15f6be06907c12fc127e9"] = true,
+    ["aa0343bb8c7a2c41e0fa3bda4"] = true,
+    ["2f99a2d512faca4c63f73a179"] = true,
+    ["da72db4e17135c3ec7bdfd124"] = true,
+    ["bc8646b2d7ca325ff29970c1e"] = true,
+    ["b96f869e2c2f27b41bcd6b728"] = true,
+    ["ee24ba9a2b26ba96e20308acd"] = true,
+    ["9a41f5aedd9d7d6d7fec12727"] = true,
+    ["5e55c0220faac2f4f3dcde6a5"] = true,
+    ["cada61d4ba3e3436fc785018b"] = true,
+    ["59fe59c11003b86cac5d507a2"] = true,
+    ["d7d9f4c74f4e15ca04cdc217d"] = true,
+    ["a475052d0119eb766afecf831"] = true,
+    ["e0e41a45049f1354e56a399f8"] = true
+}
+
+local player = game:GetService("Players").LocalPlayer
+
+if not script_key then
+    player:Kick("No Key Found!")
+end
+
+local function is_valid_key(input)
+    return Whitelist[input] == true
+end
+
+if is_valid_key(script_key) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/Nature-paid-version/refs/heads/main/Paid-Version"))()
+else
+    player:Kick("No Key Found!")
+end
