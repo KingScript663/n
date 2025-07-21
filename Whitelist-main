@@ -14,11 +14,12 @@ local Whitelist = {
     ["d7d9f4c74f4e15ca04cdc217d"] = true,
     ["a475052d0119eb766afecf831"] = true,
     ["e0e41a45049f1354e56a399f8"] = true,
-    ["7dbf2408ca524be8bbce89a06bc9f661"] = true,
-    ["3d6f1e9a50c345f3a3d663a4e00ad9f0"] = true,
-    ["62fba7c8a5c541b2a85a944d47897ac4"] = true,
-    ["8ab42ff19de84978b4ad3438f6a735ed"] = true,
-    ["cf329d2fc33444e8bcaf7c0a0b24827f"] = true
+    ["7dbf2408ca524be8bbce89a06"] = true,
+    ["3d6f1e9a50c345f3a3d663a4e"] = true,
+    ["62fba7c8a5c541b2a85a944d4"] = true,
+    ["8ab42ff19de84978b4ad34388"] = true,
+    ["cf329d2fc33444e8bcaf7c0ah"] = true,
+    ["VtSreeGaivSfeaUBPFtIZokyM"] = true -- key vĩnh viễn
 }
 
 local player = game:GetService("Players").LocalPlayer
