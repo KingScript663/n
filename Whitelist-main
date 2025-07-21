@@ -17,6 +17,7 @@ local OneDayWhitelist = {
 }
 
 local PermanentWhitelist = {
+    ["im_owner"] = true,
     ["VtSreeGaivSfeaUBPFtIZokyM"] = true
 }
 
