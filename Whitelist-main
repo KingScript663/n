@@ -1,6 +1,6 @@
 local OneDayWhitelist = {
-    ["f005c8ec0d5844a27184767f8"] = true,
-    ["eafb15f6be06907c12fc127e9"] = true,
+    ["f005c8ec0d5844a27184767f8"] = false,
+    ["eafb15f6be06907c12fc127e9"] = false,
     ["aa0343bb8c7a2c41e0fa3bda4"] = true,
     ["2f99a2d512faca4c63f73a179"] = true,
     ["da72db4e17135c3ec7bdfd124"] = true,
